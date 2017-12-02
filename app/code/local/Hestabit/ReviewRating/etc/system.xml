@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <tabs>
+        <reviewrating_tab translate="label" module="reviewrating">
+            <label>Review Rating</label>
+            <sort_order>1</sort_order>
+        </reviewrating_tab>
+    </tabs>
+
+    <sections>
+        <reviewrating translate="label" module="reviewrating">
+            <label>Api Settings</label>
+            <tab>reviewrating_tab</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+              <groups>
+                <section_one translate="label">
+                    <label>Rating Slider Settings</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+                        <get_api_key>
+                            <label>API key</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>Enter API key</comment>         
+                        </get_api_key>
+
+                        <active translate="label comment">
+                            <label>Activate Slider </label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>54</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </active>
+
+                      <active_checkout translate="label comment">
+                            <label>Show In Checkout Page</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>54</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                    </active_checkout>
+                      <active_home translate="label comment">
+                            <label>Show In Home Page</label>
+                            <frontend_type>select</frontend_type>
+                            <sort_order>54</sort_order>
+                            <source_model>adminhtml/system_config_source_enabledisable</source_model>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                    </active_home>
+                    </fields>
+                </section_one>
+
+                <section_two translate="label">
+                    <label>Horizontal Slider Design</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+                    <color_field_right>
+                        <label>Right Background Color </label>
+                        <frontend_type>text</frontend_type>
+                        <validate>jscolor</validate>
+                        <sort_order>12</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </color_field_right>
+                    <color_field_left>
+                        <label>Left Background Color </label>
+                        <frontend_type>text</frontend_type>
+                        <validate>jscolor</validate>
+                        <sort_order>12</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </color_field_left>
+                    <color_field_text>
+                        <label>Font Color</label>
+                        <frontend_type>text</frontend_type>
+                        <validate>jscolor</validate>
+                        <sort_order>12</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </color_field_text>
+                    <color_field_heading>
+                        <label>Heading Color</label>
+                        <frontend_type>text</frontend_type>
+                        <validate>jscolor</validate>
+                        <sort_order>12</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </color_field_heading>
+                    </fields>
+            </section_two>
+
+            <section_three translate="label">
+                    <label>Vertical Slider Design</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>                
+                    <fields>
+                        <color_field_top>
+                            <label>Top Section Background Color </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>jscolor</validate>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color_field_top>
+                        <color_field_bottom>
+                            <label>Bottom Section Background Color </label>
+                            <frontend_type>text</frontend_type>
+                            <validate>jscolor</validate>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color_field_bottom>
+                        <color_field_text>
+                            <label>Font Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>jscolor</validate>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color_field_text>
+                        <color_field_heading>
+                            <label>Heading Color</label>
+                            <frontend_type>text</frontend_type>
+                            <validate>jscolor</validate>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </color_field_heading>
+                    </fields>
+            </section_three>
+
+
+            </groups>  
+        </reviewrating>
+
+        
+
+        
+    </sections>
+</config>

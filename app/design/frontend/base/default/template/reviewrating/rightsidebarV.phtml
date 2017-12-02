@@ -1,0 +1,215 @@
+<?php 
+// echo get_class($this);
+
+$reviewsData =  $this->get_reviews_data();
+
+
+if (Mage::helper( 'core' )->isModuleOutputEnabled( 'Hestabit_ReviewRating' ) ) {
+            /*
+                Vertical slider design values
+            */
+
+                $bgColorTop = Mage::helper('reviewrating')->getBgColorTop();    
+                $bgColorBottom = Mage::helper('reviewrating')->getBgColorBottom();
+                $vHeadingColor = Mage::helper('reviewrating')->VgetHeadingColor();
+                $vTextColor = Mage::helper('reviewrating')->VgetTextColor(); 
+
+
+                
+
+             /*
+                Checking is slider activated for Home Page
+
+             */
+                $showOnHome = Mage::helper('reviewrating')->showOnHome();
+
+             /*
+                Sign Up / Sign In form
+                Got to  signupform.phtml file to modify fields or design.
+             */
+                
+
+                if( Mage::helper('reviewrating')->showSlider() == 1 && $showOnHome) {
+                 if( Mage::getBlockSingleton('page/html_header')->getIsHomePage() ) { 
+                /*
+                Slider Html Starts here
+                */
+                ?>
+
+                
+                <div class="hb-rating" id="hb-rating">
+                 <div class="side-bar-left psydro-extention top-content bg-white">
+                  <div class="hb-wrapper-top" id="hb-wrapper-top">
+                   <div class="img img-1">
+                     <i class="fa fa-star"></i>
+                     <i class="fa fa-star"></i>
+                     <i class="fa fa-star"></i>
+                     <i class="fa fa-star"></i>
+                     <i class="fa fa-star"></i>
+                   </div>
+               <!--   <p>
+                   Sunt dignissimos <span>36,005</span> veniam, tenetur distinctio, veniam, tenetur aspernatur nulla!
+                 </p>
+               -->
+               <div class="hb-rating-info" id="hb-rating-info">Based on
+                <span class="hb-rating-avg-counter makeBold" id="hb-rating-avg-counter makeBold">3,256 </span>reviews
+                <br> see some of reviews here
+              </div>
+
+
+              <div class="logo-img">
+               <img src="<?php echo $this->getSkinUrl('reviewrating/assets/logo.png');?>" alt="logo">
+             </div>
+
+                 <!-- <div class="write-review-btn">
+                    <a href="#">write a review</a>
+                  </div> -->
+
+                  <div class="write-review-btn hb-giveReview" id="custompopup">
+                   <a class="reviewBtn" id="reviewBtn" onclick="return showForm('signup_popup_form')" href="#">write a review </a> 
+                 </div>
+
+               </div>
+               <div class="hideMe" id="hideMe" style="display: none;"> 
+                <div id="signup_popup_form"  >
+                  <?php 
+                  echo  $this->getLayout()->createBlock('core/template')
+                  ->setTemplate('reviewrating/signupform.phtml')->toHtml();?>
+                </div>
+              </div>
+
+              <div class="hb-wrapper-bottom" id="hb-wrapper-bottom">
+               <div id="vertical_wrapper" class="bottom-content">
+                <div class="vertical psydro-extention" id="vertical">
+                 <div class="item">
+                   <div id="hb-client-name makeBold" id="makeBold" >Daniel <span>20 hours ago</span></div>
+                   <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+                    <i class="fa fa-star" data-alt="1" title="review"></i>
+                    <i class="fa fa-star" data-alt="2" title="review"></i>
+                    <i class="fa fa-star" data-alt="3" title="review"></i>
+                    <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+                    <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+                  </div> <!-- Star ends -->
+                  <div class="hb-rating-header makeBold"> Elated with them</div>
+                  <div class="hb-rating-comment"> 
+                    <p>Very good quality products at resonable prices. Surprisingly fast shipping, good packaging. Can no...</p>
+                  </div>
+                </div>
+
+                <div class="item">
+                 <div id="makeBold" >Daniel <span>20 hours ago</span></div>
+                 <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+                  <i class="fa fa-star" data-alt="1" title="review"></i>
+                  <i class="fa fa-star" data-alt="2" title="review"></i>
+                  <i class="fa fa-star" data-alt="3" title="review"></i>
+                  <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+                  <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+                </div> <!-- Star ends -->
+                <div class="hb-rating-header makeBold" id="makeBold"> Elated with them</div>
+                <div class="hb-rating-comment"> 
+                  <p>Very good quality products at resonable prices. Surprisingly fast shipping, good packaging. Can no...</p>
+                </div>
+              </div>
+
+              <div class="item">
+               <div id="makeBold">Daniel <span>20 hours ago</span></div>
+               <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+                <i class="fa fa-star" data-alt="1" title="review"></i>
+                <i class="fa fa-star" data-alt="2" title="review"></i>
+                <i class="fa fa-star" data-alt="3" title="review"></i>
+                <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+                <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+              </div> <!-- Star ends -->
+              <div class="hb-rating-header " id="makeBold"> Elated with them</div>
+              <div class="hb-rating-comment"> 
+                <p>Very good quality products at resonable prices. Surprisingly fast shipping, good packaging. Can no...</p>
+              </div>
+            </div>
+
+            <div class="item">
+             <div id="makeBold">Daniel <span>20 hours ago</span></div>
+             <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+              <i class="fa fa-star" data-alt="1" title="review"></i>
+              <i class="fa fa-star" data-alt="2" title="review"></i>
+              <i class="fa fa-star" data-alt="3" title="review"></i>
+              <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+              <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+            </div> <!-- Star ends -->
+            <div class="hb-rating-header" id="makeBold"> Elated with them</div>
+            <div class="hb-rating-comment"> 
+              <p>Very good quality products at resonable prices. Surprisingly fast shipping, good packaging. Can no...</p>
+            </div>
+          </div>
+
+          <div class="item">
+           <div id="makeBold">Daniel <span>20 hours ago</span></div>
+           <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+            <i class="fa fa-star" data-alt="1" title="review"></i>
+            <i class="fa fa-star" data-alt="2" title="review"></i>
+            <i class="fa fa-star" data-alt="3" title="review"></i>
+            <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+            <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+          </div> <!-- Star ends -->
+          <div class="hb-rating-header" id="makeBold"> Elated with them</div>
+          <div class="hb-rating-comment"> 
+            <p>Very good quality products at resonable prices. Surprisingly fast shipping, good packaging. Can no...</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<?php   
+                /*
+                Slider Html Ends here
+                */
+              }
+            }
+            ?>
+
+
+    <!-- 
+         Js to change the design on the fly.
+       -->
+
+
+
+       <script type="text/javascript">
+
+        window.addEventListener("load", activateSlider);
+
+        function activateSlider() {
+          var slider = tns({
+            container: '#vertical',
+            items: 3,
+            axis:'vertical',
+            slideBy: 'page',
+            autoplay: false,
+            autoplayButtonOutput: false,
+            speed: 400
+            
+          });
+
+
+        }
+
+        
+        
+        var makeBold = document.getElementById("makeBold");
+        var hb_wrapper_top = document.getElementById("hb-wrapper-top");
+        var hb_wrapper_bottom = document.getElementById("hb-wrapper-bottom");
+        var hb_rating = document.getElementById("hb-rating");
+
+        hb_wrapper_top.style.backgroundColor = "<?php echo $bgColorTop; ?>";
+        hb_wrapper_bottom.style.backgroundColor = "<?php echo $bgColorBottom; ?>";
+
+        makeBold.style.color = "<?php echo $vHeadingColor; ?>";
+        hb_rating.style.color = "<?php echo $vTextColor; ?>";
+
+      </script>
+
+      <?php 
+    }
+    ?>

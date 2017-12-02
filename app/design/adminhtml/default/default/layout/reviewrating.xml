@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<adminhtml_system_config_edit>
+    <reference name="head">
+        <action method="addItem">
+           <type>skin_css</type>
+           <name>reviewrating/css/hBratingsliderAdmin.min.css</name>
+        </action>
+        <action method="addItem">
+             <type>js</type>
+             <name>reviewrating/js/jscolor/jscolor.js</name>
+        </action>
+    </reference>
+</adminhtml_system_config_edit>
+
+  <reviewrating_adminhtml_reviewratingbackend_index>
+	<reference name="content">
+	  <block type="reviewrating/adminhtml_reviewratingbackend" name="reviewratingbackend" template="/reviewratingbackend.phtml"/>
+	</reference>
+  </reviewrating_adminhtml_reviewratingbackend_index>
+</layout>

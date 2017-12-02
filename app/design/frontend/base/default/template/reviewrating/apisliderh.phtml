@@ -1,0 +1,217 @@
+<?php 
+// echo get_class($this);
+
+$reviewsData =  $this->get_reviews_data();
+
+
+if (Mage::helper( 'core' )->isModuleOutputEnabled( 'Hestabit_ReviewRating' ) ) {
+            /*
+                Vertical slider design values
+            */
+                $bgColorRht = Mage::helper('reviewrating')->getBgColorRht();    
+                $bgColorLft = Mage::helper('reviewrating')->getBgColorLft();
+                $headingColor = Mage::helper('reviewrating')->getHeadingColor();
+                $textColor = Mage::helper('reviewrating')->getTextColor(); 
+
+             /*
+                Checking is slider activated for Cart Page
+
+             */
+                $showOnCheckout = Mage::helper('reviewrating')->showOnCheckout();
+
+             /*
+                Sign Up / Sign In form
+                Got to  signupform.phtml file to modify fields or design.
+             */
+                
+            /*
+                To check the current page is cart Page or Not
+                Use $action
+            */
+
+                $request = $this->getRequest(); 
+                $module = $request->getModuleName();
+                $controller = $request->getControllerName();
+                $action = $request->getActionName();
+
+                
+                if( Mage::helper('reviewrating')->showSlider() == 1 && $showOnCheckout ) { 
+                  if($module == 'checkout' && $controller == 'cart' && $action == 'index') { 
+                    $popupForm =  $this->getLayout()->createBlock('core/template')
+                    ->setTemplate('reviewrating/signupform.phtml')->toHtml();
+             /*
+                Slider Html Starts here
+              */
+
+                ?>
+                <div class="hb-rating" id="hb-rating">
+                  <div class="side-bar-left psydro-extention top-content bg-white">
+                    <div class="hb-wrapper-left">
+                     <div class="wrapper">
+                      <div class="wrap ">
+                        <div class="side-bar-left psydro-extention" id="hb-wrapper-left">
+                         <div class="img img-1">
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                           <i class="fa fa-star"></i>
+                         </div>
+                         <div class="hb-rating-info" id="hb-rating-info">Based on
+                          <span class="hb-rating-avg-counter makeBold" id="hb-rating-avg-counter makeBold">3,256 </span>reviews
+                          <br> see some of reviews here
+                        </div>
+                        <div class="logo-img">
+                         <img src="<?php echo $this->getSkinUrl('reviewrating/assets/logo.png');?>" alt="logo">
+                       </div>
+
+                       <div class="write-review-btn hb-giveReview" id="custompopup">
+                         <a class="reviewBtn" id="reviewBtn" onclick="return showForm('signup_popup_form')" href="#">write a review </a> 
+                       </div>
+                     </div>
+                     <div class="hideMe" id="hideMe" style="display: none;"> 
+                      <div id="signup_popup_form"  >
+                        <?php 
+                        echo  $this->getLayout()->createBlock('core/template')
+                        ->setTemplate('reviewrating/signupform.phtml')->toHtml();?>
+                      </div>
+                    </div>
+
+                    <div class="right-side-bar" id="hb-wrapper-right">
+                      <div id="vertical_wrapper">
+                        <div class="hb-horizontal psydro-extention" id="hb-horizontal">
+                          <div class="item">
+                           <div class="hb-client-name makeBold" id="makeBold" >Daniel <span>20 hours ago</span></div>
+                           <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+                            <i class="fa fa-star" data-alt="1" title="review"></i>
+                            <i class="fa fa-star" data-alt="2" title="review"></i>
+                            <i class="fa fa-star" data-alt="3" title="review"></i>
+                            <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+                            <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+                          </div> <!-- Star ends -->
+                          <div class="hb-rating-header makeBold" id="makeBold"> Elated with them</div>
+                          <div class="hb-rating-comment"> 
+                            <p>Very good quality products at resonable prices. Surprisingly Can no...</p>
+
+                          </div>
+                        </div>
+                        <div class="item">
+                         <div class="hb-client-name makeBold" id="makeBold" >Daniel <span>20 hours ago</span></div>
+                         <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+                          <i class="fa fa-star" data-alt="1" title="review"></i>
+                          <i class="fa fa-star" data-alt="2" title="review"></i>
+                          <i class="fa fa-star" data-alt="3" title="review"></i>
+                          <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+                          <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+                        </div> <!-- Star ends -->
+                        <div class="hb-rating-header makeBold" id="makeBold"> Elated with them</div>
+                        <div class="hb-rating-comment"> 
+                         <p>Very good quality products at resonable prices. Surprisingly Can no...</p>
+
+                       </div>
+                     </div>
+                     <div class="item">
+                       <div class="hb-client-name makeBold" id="makeBold" >Daniel <span>20 hours ago</span></div>
+                       <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+                        <i class="fa fa-star" data-alt="1" title="review"></i>
+                        <i class="fa fa-star" data-alt="2" title="review"></i>
+                        <i class="fa fa-star" data-alt="3" title="review"></i>
+                        <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+                        <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+                      </div> <!-- Star ends -->
+                      <div class="hb-rating-header makeBold" id="makeBold"> Elated with them</div>
+                      <div class="hb-rating-comment"> 
+                       <p>Very good quality products at resonable prices. Surprisingly Can no...</p>
+
+                     </div>
+                   </div>
+
+                   <div class="item">
+                     <div class="hb-client-name makeBold" id="makeBold" >Daniel <span>20 hours ago</span></div>
+                     <div class="hb-rating-stars clearfix ratings" id="hb-rating-stars">
+                      <i class="fa fa-star" data-alt="1" title="review"></i>
+                      <i class="fa fa-star" data-alt="2" title="review"></i>
+                      <i class="fa fa-star" data-alt="3" title="review"></i>
+                      <i class="fa fa-star shadow" data-alt="4" aria-hidden="true"></i>
+                      <i class="fa fa-star shadow" data-alt="5" aria-hidden="true"></i>
+                    </div> <!-- Star ends -->
+                    <div class="hb-rating-header makeBold" id="makeBold"> Elated with them</div>
+                    <div class="hb-rating-comment"> 
+                      <p>Very good quality products at resonable prices. Surprisingly Can no...</p>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+            
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php 
+               /*
+                Slider Html Starts here
+                */
+              } ?>
+
+
+              <script type="text/javascript">
+
+                window.addEventListener("load", activateSlider);
+
+                function activateSlider() {
+                  var slider = tns({
+                   container: '#hb-horizontal',
+                   slideBy: 'page',
+                   autoplay: true,
+                   autoplayButtonOutput: false,
+                   speed: 400,
+                   responsive: {
+                    640: {
+
+                      items: 1
+                    },
+                    767: {
+                     items: 2
+                   },
+                   991: {
+                    items: 3
+                  }
+                }
+              });
+
+
+                }
+
+                
+                // From apislider.phtml
+                var makeBold = document.getElementById("makeBold");
+                var hb_wrapper_left = document.getElementById("hb-wrapper-left");
+                var hb_wrapper_right = document.getElementById("hb-wrapper-right");
+                var hb_rating = document.getElementById("hb-rating");
+
+                hb_wrapper_left.style.backgroundColor = "<?php echo $bgColorRht; ?>";
+                hb_wrapper_right.style.backgroundColor = "<?php echo $bgColorLft; ?>";
+
+                makeBold.style.color = "<?php echo $headingColor; ?>";
+                hb_rating.style.color = "<?php echo $textColor; ?>";
+                
+
+                function showForm(id){
+                  document.getElementById('popup').style.display = "block";
+                  document.getElementById('hb-rating-slider-signup').style.display = "none";  
+                  win = new Window({ id:'popup_window', className: "magento", title: "Sign Up Form", zIndex:3000, destroyOnClose: true, recenterAuto:true, resizable: true, width:500, height:400, minimizable: false, maximizable: false, draggable: true});
+                  win.setContent(id, false, false);
+                  win.showCenter();
+
+                }
+
+
+              </script>
+              
+              <?php } } else { echo "Plugin De Activated<br/>"; }
